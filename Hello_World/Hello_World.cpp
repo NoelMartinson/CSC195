@@ -1,5 +1,7 @@
 #include "student.h"
 #include <iostream>
+#include <vector>
+#include <list>
 using namespace std;
 
 class Person {
@@ -31,6 +33,43 @@ int main() {
 
     f();
     Student student;
+
+    vector<int> vec = { 1,2,3,4,5 };
+
+    //Creates two ints at the end
+    vec.push_back(6);
+    vec.push_back(7);
+    vec[0] = 5;
+
+    //Removes the very last int
+    vec.pop_back();
+
+    //Shows the current size of the vector
+    for (int i = 0; i < vec.size(); i++) {
+        cout << vec[i] << endl;
+    }
+
+    string l = "\n List";
+    cout << l << endl;
+    //list
+
+    list<string> lst = { "Apple", "Pear", "Grape" };
+
+    //Creates an item at the front and back
+    lst.push_front("Cherry");
+    lst.push_back("Orange");
+
+    list<int>::iterator iter = lst.begin();
+    cout << *iter << endl;
+    iter++;
+
+    //Removws an item
+    lst.remove("Pear");
+
+    for (list<string>::iterator it = lst.begin(); it != lst.end(); ++it) {
+        cout << *it << " ";
+    }
+
     return 0;
 }
 

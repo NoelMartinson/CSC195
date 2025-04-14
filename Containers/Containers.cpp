@@ -4,7 +4,17 @@
 #include <list>
 #include <stack>
 #include <map>
+#include <unordered_map>
 using namespace std;
+
+unsigned int GetHash(std::string str) {
+	int hash = 0;
+	for (char c : str)
+	{
+		hash = hash * 31 + (int)c;
+	}
+	return hash;
+}
 
 void arrayDays() {
 	//array
@@ -66,7 +76,7 @@ void listFruits() {
 }
 
 void mapGroceries() {
-	//map
+	//(ordered) map
 	string ma = "\n Map \n";
 	cout << ma << endl;
 	//map
@@ -79,11 +89,28 @@ void mapGroceries() {
 
 	//Update value for an existing key
 	m["ground beef"] = 2;
-
+	
 	//Print the map
 	for (map<string, int>::iterator it = m.begin(); it != m.end(); ++it) {
 		cout << it->first << ": " << it->second << endl;
 	}
+
+	//unordered map
+	unordered_map<int, string> um;
+	um[1234] = "allmendiger";
+	um[5687] = "oxborow";
+	cout << um[5687] << endl;
+	
+	string name = "Raymond";
+	int hash = GetHash(name);
+	cout << hash << endl;
+	int data[10];
+	data[hash % 10] = 84025;
+
+
+	hash = GetHash("Raymond");
+	cout << data[hash % 10] << endl;
+
 }
 
 int main() {
