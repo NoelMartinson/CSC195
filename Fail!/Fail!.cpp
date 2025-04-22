@@ -15,7 +15,10 @@ int main() {
 	for (int i = 0; i < shapes.size(); i++)
 	{
 		cout << "Area: " << shapes[i]->Area() << endl;
-		// TODO: If shape is a circle, print radius
+		Circle* circle = dynamic_cast<Circle*>(shapes[i]);
+		if (circle != nullptr) {
+			cout << "Radius: " << circle->GetRadius() << endl;
+		}
 	}
 	for (Shape* s : shapes) {
 		delete s;
