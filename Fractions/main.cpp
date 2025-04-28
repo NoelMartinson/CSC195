@@ -4,8 +4,8 @@
 using namespace math;
 
 int main() {
-    Fraction<int> a(1, 2);
-    Fraction<int> b(3, 4);
+    Fraction<int> a(1, 4);
+    Fraction<int> b(2, 6);
     Fraction<int> result;
 
     std::cout << "a = " << a << "\n";
